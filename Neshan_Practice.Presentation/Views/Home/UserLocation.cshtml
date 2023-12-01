@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "UserLocation";
+}
+
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    debugger
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(po) {
+    debugger
+  x.innerHTML = "Latitude: " + po.coords.latitude + 
+  "<br>Longitude: " + po.coords.longitude;
+}
+</script>

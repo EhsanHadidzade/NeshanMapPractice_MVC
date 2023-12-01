@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<a class="btn btn-outline-info btn-lg" href="/home/Search" onclick="Vib()"> (بدون استفاده)سرچ روی نقشه</a>
+<br />
+<br />
+<a class="btn btn-outline-info btn-lg" href="/home/GeoCoding" onclick="Vib()"> تبدیل آدرس به لوکیشن</a>
+<br />
+<br />
+<a class="btn btn-outline-info btn-lg" href="/home/ReverseGeoCoding" onclick="Vib()"> تبدیل لوکیشن به آدرس</a>
+<br />
+<br />
+<a class="btn btn-outline-info btn-lg" href="/home/TravelingSaleMan" onclick="Vib()"> فروشنده دوره گرد</a>
+<br />
+<br />
+<a class="btn btn-outline-info btn-lg" href="/home/BestDirection"> بهترین مسیر بین 2 نقطه و محاسبه زمان و مسافت</a>
+
+
+
+<script>
+    function Vib(){
+        debugger
+        window.navigator.vibrate(200);
+
+    }</script>

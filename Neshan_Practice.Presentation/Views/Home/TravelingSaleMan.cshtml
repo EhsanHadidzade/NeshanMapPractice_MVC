@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "TravelingSaleMan";
+}
+
+
+
+<div id="map"
+     style="position: absolute;z-index: 1; width: 70%; height: 70%; background: #eee; border: 2px solid #aaa;"></div>
+<div style="position: absolute;z-index: 2;background-color: #eee;width: fit-content;height: fit-content;margin-left: 10px;margin-top: 5%;opacity: 0.9;">
+    <button id="start" style="margin-top: 10px;margin-left: 10px;" onclick="reset()">Start</button>
+    <pre id="waypoints">waypoints</pre>
+    <input type="checkbox" id="lastIsAnyPoint" name="lastIsAnyPoint" value="lastIsAnyPoint" checked onclick="tspcheck()">
+    <label for="lastIsAnyPoint">lastIsAnyPoint</label><br>
+    <input type="checkbox" id="sourceIsAnyPoint" name="sourceIsAnyPoint" value="sourceIsAnyPoint" checked onclick="tspcheck()">
+    <label for="sourceIsAnyPoint">sourceIsAnyPoint</label><br>
+    <input type="checkbox" id="roundTrip" name="roundTrip" value="roundTrip" checked onclick="tspcheck()">
+    <label for="roundTrip">roundTrip</label>
+    <br>
+    <button id="tsp" style="margin-top: 10px;margin-left: 10px;" onclick="tsp()" disabled>TSP</button>
+    <br />
+    <br />
+    <button onclick="getLocation()">Current Location</button>
+
+
+</div>
+
+@section Scripts{
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="~/js/leaflet.awesome-markers.js"></script>
+<script src="~/js/TSP-server.js" type="text/javascript"></script>
+}

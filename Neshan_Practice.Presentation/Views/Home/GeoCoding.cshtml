@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "GeoCoding";
+}
+
+<div id="panel" class="panel" style="height: fit-content;">
+    <input style="width: 100%;" dir="rtl" type="text" placeholder="Address" required id="address">
+    <button id="search" style="margin-top: 10px;margin-left: 50%;" onclick="geocoding()">Search</button>
+    <!--Search_Result-->
+    <p dir="rtl" id="log"> </p>
+
+    <!--MySearch_Result-->
+    <form method="post" action="/Home/save">
+        <label>latitude</label>
+        <input dir="ltr" type="text" placeholder="latitude" required id="center_lat" name="latitude">
+        <br>
+        <label>longitude</label>
+        <input dir="ltr" type="text" placeholder="longitude" required id="center_lng" name="longitude">
+        <br>
+
+    </form>
+    <br />
+    <br />
+    <button onclick="getLocation()">Current Location</button>
+</div>
+<div id="map"
+     style="width: 70%; height: 70%; background: #eee; border: 2px solid #aaa;position: absolute;z-index: 1;display: block;"></div>
+<p id="log">logs</p>
+
+
+@section Scripts{
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript" src="~/js/GeoCoding-server.js"></script>
+    }
+
+

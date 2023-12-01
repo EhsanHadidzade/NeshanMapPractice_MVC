@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "BestDirection";
+}
+
+
+<div id="map"
+     style="position: absolute;z-index: 1; width: 70%; height: 70%;; background: #eee; border: 2px solid #aaa;"></div>
+<div style="position: absolute;z-index: 2;background-color: #eee;width: fit-content;height: fit-content;margin-left: 10px;margin-top: 5%;opacity: 0.9;">
+    <button id="start" style="margin-top: 10px;margin-left: 10px;" onclick="direction()">Start</button>
+    <p id="help" dir="rtl">برای شروع گزینه start را فشار دهید.</p>
+    <p id="origin">origin</p>
+    <p id="destination">destination</p>
+    <pre id="waypoints">waypoints</pre>
+    <input type="checkbox" id="avoidTrafficZone" name="avoidTrafficZone" value="avoidTrafficZone" checked>
+    <label for="avoidTrafficZone">avoidTrafficZone</label><br>
+    <input type="checkbox" id="avoidOddEvenZone" name="avoidOddEvenZone" value="avoidOddEvenZone" checked>
+    <label for="avoidOddEvenZone">avoidOddEvenZone</label><br>
+    <input type="checkbox" id="alternative" name="alternative" value="alternative">
+    <label for="alternative">alternative</label>
+    <input type="checkbox" id="traffic" name="traffic" value="traffic" checked>
+    <label for="traffic">traffic</label><br>
+    <input type="text" id="bearing" name="bearing">
+    <label for="bearing">bearing</label><br>
+    <hr />
+
+    <!--Distance And Duration-->
+    <input type="text" id="Distance" name="Distance">
+    <label for="Distance">Distance</label><br>
+
+    <input type="text" id="Duration" name="Duration">
+    <label for="Duration">Duration</label><br>
+
+    <p dir="rtl" id="resultCount"></p>
+    <div id="resualt">
+    </div>
+    <!--Distance And Duration-->
+    <br>
+    <button id="navigation" style="margin-top: 10px;margin-left: 10px;" onclick="navigation()">navigate</button>
+    <br>
+    <input type="radio" id="motor" name="type" value="motorcycle">
+    <label for="motorcycle">MotorCycle</label>
+    <input type="radio" id="car" name="type" value="car" checked>
+    <label for="car">Car</label><br>
+    <br />
+    <button onclick="getLocation()">Current Location</button>
+</div>
+
+
+@section Scripts{
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="~/js/BestDirection-Polyline.encoded.js"></script>
+<script src="~/js/BestDirection-server.js" type="text/javascript"></script>
+}
